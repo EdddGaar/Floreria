@@ -45,7 +45,6 @@
       overflow-x: hidden;
     }
 
-    /* Scrollbar bonito */
     ::-webkit-scrollbar {
       width: 8px;
     }
@@ -62,7 +61,6 @@
       text-decoration: none;
     }
 
-    /* Layout base */
     .page {
       min-height: 100vh;
       position: relative;
@@ -75,7 +73,6 @@
       padding: 0 1.25rem;
     }
 
-    /* Fondos decorativos */
     .bg-orb {
       position: fixed;
       inset: 0;
@@ -130,25 +127,28 @@
       gap: 0.55rem;
     }
 
-    .brand-icon {
-      width: 32px;
-      height: 32px;
+    .brand-logo-wrap {
+      width: 36px;
+      height: 36px;
       border-radius: 999px;
-      background: radial-gradient(circle at 30% 30%, #f9738f, #e11d48);
+      background: radial-gradient(circle at 30% 30%, rgba(248,113,136,0.85), rgba(15,23,42,1));
       display: flex;
       align-items: center;
       justify-content: center;
-      box-shadow: 0 15px 35px rgba(248,113,136,0.7);
+      box-shadow: 0 12px 30px rgba(248,113,136,0.7);
+      overflow: hidden;
     }
 
-    .brand-icon span {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.15rem;
+    .brand-logo {
+      width: 32px;
+      height: 32px;
+      object-fit: contain;
+      display: block;
     }
 
     .brand-text-main {
       font-family: 'Playfair Display', serif;
-      font-size: 1.15rem;
+      font-size: 1.1rem;
       letter-spacing: 0.03em;
     }
 
@@ -519,7 +519,6 @@
       opacity: 0.9;
     }
 
-    /* GRID CATEGORÍAS */
     .grid {
       display: grid;
       gap: 1.1rem;
@@ -528,9 +527,6 @@
     @media (min-width: 768px) {
       .grid-cols-3-md {
         grid-template-columns: repeat(3, minmax(0, 1fr));
-      }
-      .grid-cols-2-md {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
       }
     }
 
@@ -547,12 +543,8 @@
         padding-inline: 1rem;
       }
 
-      .nav-links {
+      .nav-links.desktop {
         display: none;
-      }
-
-      .hero-card {
-        margin-top: 0.5rem;
       }
 
       .section {
@@ -560,6 +552,7 @@
       }
     }
 
+    /* Cards catálogo */
     .card {
       position: relative;
       border-radius: var(--radius-xl);
@@ -729,6 +722,33 @@
       color: #f9fafb;
     }
 
+    .social-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem 0.7rem;
+      font-size: 0.8rem;
+      margin-top: 0.3rem;
+    }
+
+    .social-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      padding: 0.2rem 0.55rem;
+      border-radius: 999px;
+      border: 1px solid rgba(148,163,184,0.6);
+      background: rgba(15,23,42,0.9);
+      color: #e5e7eb;
+      cursor: pointer;
+      transition: background 140ms ease-out, border-color 140ms ease-out, transform 140ms ease-out;
+    }
+
+    .social-link:hover {
+      transform: translateY(-1px);
+      background: rgba(15,23,42,1);
+      border-color: #f9738f;
+    }
+
     /* FOOTER */
     .footer {
       padding: 1.6rem 0 2.2rem;
@@ -815,14 +835,12 @@
       transform: translateX(0);
     }
 
-    /* RAYAS DECORATIVAS */
     .divider {
       border: 0;
       border-top: 1px solid rgba(148,163,184,0.35);
       margin: 1.7rem 0 1.6rem;
     }
 
-    /* RESPONSIVE NAV (simple) */
     .nav-toggle {
       display: none;
       border: none;
@@ -851,10 +869,6 @@
       .nav-links.mobile.open {
         display: flex;
       }
-
-      .nav-links.desktop {
-        display: none;
-      }
     }
   </style>
 </head>
@@ -867,8 +881,8 @@
     <header class="navbar">
       <div class="container navbar-inner">
         <div class="brand">
-          <div class="brand-icon">
-            <span>✿</span>
+          <div class="brand-logo-wrap">
+            <img src="https://raw.githubusercontent.com/EdddGaar/Floreria/main/FLORERIA-Logo.png" alt="Florería San Miguel Logo" class="brand-logo">
           </div>
           <div>
             <div class="brand-text-main">Florería San Miguel</div>
@@ -923,11 +937,11 @@
             </div>
             <h1 class="hero-title">
               Diseño floral elegante para
-              <span class="accent">bodas, XV años</span> y momentos inolvidables.
+              <span class="accent">bodas, XV años</span> y eventos especiales.
             </h1>
             <p class="hero-subtitle">
               En Florería San Miguel transformamos cada evento en Zinacantepec en algo especial:
-              portadas de iglesia, autos, centros de mesa y arreglos a la medida, con atención cercana y profesional.
+              portadas de iglesia, autos, centros de mesa y arreglos personalizados, con atención cercana y profesional.
             </p>
 
             <div class="hero-badges">
@@ -957,7 +971,7 @@
 
             <div class="hero-note">
               <span class="hero-note-dot"></span>
-              <span>Podemos mostrarte el catálogo completo en local o enviártelo a tu celular.</span>
+              <span>Podemos mostrarte el catálogo en el local o enviártelo a tu celular.</span>
             </div>
           </div>
 
@@ -979,7 +993,7 @@
               <div class="hero-card-stat">
                 <div>
                   <div style="font-size:0.75rem;color:#cbd5f5;">Experiencia en eventos</div>
-                  <strong>+ Años de trabajo continuo</strong>
+                  <strong>Trabajo dedicado y artesanal</strong>
                 </div>
                 <div style="text-align:right;">
                   <div style="font-size:0.75rem;color:#cbd5f5;">Atención personalizada</div>
@@ -1020,7 +1034,7 @@
             <div class="section-chip-row">
               <div class="chip">Bodas</div>
               <div class="chip">XV años</div>
-              <div class="chip">Portadas de iglesia</div>
+              <div class="chip">Portadas</div>
               <div class="chip">Autos</div>
               <div class="chip">Funerales</div>
               <div class="chip">Eventos sociales</div>
@@ -1048,7 +1062,7 @@
                 <div>Elige tu estilo de boda</div>
                 <div class="card-actions">
                   <a
-                    href="https://photos.app.goo.gl/j1skCY6Vg8URmaLs9"
+                    href="REEMPLAZA_AQUI_URL_ALBUM_BODAS_GENERAL"
                     class="btn-card primary"
                     target="_blank" rel="noopener noreferrer"
                   >
@@ -1079,7 +1093,7 @@
                 <div>Colores que combinan con tu vestido</div>
                 <div class="card-actions">
                   <a
-                    href="https://photos.app.goo.gl/VhRsJzzisWPYgWrX9"
+                    href="REEMPLAZA_AQUI_URL_ALBUM_XV_GENERAL"
                     class="btn-card primary"
                     target="_blank" rel="noopener noreferrer"
                   >
@@ -1186,7 +1200,7 @@
               </div>
             </article>
 
-            <!-- EVENTOS SOCIALES / EXPRESS -->
+            <!-- EVENTOS SOCIALES -->
             <article class="card" id="eventos">
               <div class="card-header">
                 <div class="card-title">Eventos sociales</div>
@@ -1242,7 +1256,7 @@
                     <span>Ver galería</span> <span>⟶</span>
                   </a>
                   <a
-                    href="https://wa.me/52REEMPLAZA_AQUI_TU_NUMERO?text=Hola%2C%20quiero%20saber%20qu%C3%A9%20arreglos%20express%20tienen%20disponibles%20hoy."
+                    href="https://wa.me/527228966441?text=Hola%2C%20quiero%20saber%20qu%C3%A9%20arreglos%20express%20tienen%20disponibles%20hoy."
                     class="btn-card"
                     target="_blank" rel="noopener noreferrer"
                   >
@@ -1275,13 +1289,13 @@
             <div>
               <div class="contact-title">Florería San Miguel · Zinacantepec</div>
               <p class="contact-text">
-                Podemos atenderte en el local o por WhatsApp. Si lo prefieres, puedes llegar con fotos de ejemplo,
+                Podemos atenderte en el local o por WhatsApp. Si lo prefieres, puedes llegar con fotos de ejemplo
                 y juntos encontramos el estilo ideal para tu iglesia, salón y auto.
               </p>
               <ul class="contact-list">
                 <li>
                   <span class="bullet"></span>
-                  <span><strong>Horario:</strong> Lunes a domingo · Horario flexible según evento</span>
+                  <span><strong>Horario:</strong> Lunes a domingo · Horario según evento</span>
                 </li>
                 <li>
                   <span class="bullet"></span>
@@ -1289,13 +1303,13 @@
                 </li>
                 <li>
                   <span class="bullet"></span>
-                  <span><strong>WhatsApp:</strong> +52 REEMPLAZA_AQUI_TU_NUMERO</span>
+                  <span><strong>WhatsApp:</strong> +52 722 896 6441</span>
                 </li>
               </ul>
 
               <div class="hero-cta-row">
                 <a
-                  href="https://wa.me/52REEMPLAZA_AQUI_TU_NUMERO?text=Hola%20Florer%C3%ADa%20San%20Miguel%2C%20quiero%20cotizar%20arreglos%20para%20un%20evento."
+                  href="https://wa.me/527228966441?text=Hola%20Florer%C3%ADa%20San%20Miguel%2C%20quiero%20cotizar%20arreglos%20para%20un%20evento."
                   class="btn-primary"
                   target="_blank" rel="noopener noreferrer"
                 >
@@ -1308,6 +1322,27 @@
                   target="_blank" rel="noopener noreferrer"
                 >
                   <span>Llenar formulario de cotización</span>
+                </a>
+              </div>
+
+              <div class="social-row">
+                <a
+                  href="https://www.facebook.com/share/17CNg5ki17/"
+                  class="social-link"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <span>📘</span>
+                  <span>Florería San Miguel</span>
+                </a>
+                <a
+                  href="https://www.tiktok.com/@juanmanuelsanch716?_r=1&_t=ZS-91v3rAaF8mC"
+                  class="social-link"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <span>🎵</span>
+                  <span>TikTok Juanito</span>
                 </a>
               </div>
             </div>
@@ -1358,7 +1393,7 @@
     <!-- WHATSAPP FLOAT -->
     <div class="whatsapp-float">
       <a
-        href="https://wa.me/52REEMPLAZA_AQUI_TU_NUMERO?text=Hola%20Florer%C3%ADa%20San%20Miguel%2C%20me%20gustar%C3%ADa%20m%C3%A1s%20informaci%C3%B3n."
+        href="https://wa.me/527228966441?text=Hola%20Florer%C3%ADa%20San%20Miguel%2C%20me%20gustar%C3%ADa%20m%C3%A1s%20informaci%C3%B3n."
         target="_blank" rel="noopener noreferrer"
       >
         <button class="whatsapp-btn" aria-label="Abrir WhatsApp">
