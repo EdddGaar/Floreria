@@ -2,1256 +2,192 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <title>Florería San Miguel | Arreglos Florales para Eventos</title>
+  <title>Florería San Miguel | Diseño Floral Elegante</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Florería San Miguel - Arreglos florales elegantes y personalizados para bodas, XV años, portadas de iglesia, autos y eventos especiales en Zinacantepec." />
 
-  <!-- Fuentes -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
-
-  <!-- Estilos -->
+  <!-- Tipografías -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+  
   <style>
     :root {
-      --bg: #f7f3f8;
-      --bg-soft: #fdfbff;
-      --accent: #ed9fbf;
-      --accent-strong: #e47aa3;
-      --accent-soft: rgba(237,159,191,0.12);
-      --text-main: #2b2835;
-      --text-soft: #6b6776;
-      --border-soft: rgba(164, 152, 175, 0.35);
-      --radius-xl: 18px;
-      --shadow-soft: 0 18px 50px rgba(149, 128, 167, 0.25);
-      --nav-height: 72px;
-      --transition-fast: 180ms ease-out;
+      --bg-overlay: rgba(255, 245, 250, 0.78);
+      --glass-bg: rgba(255, 255, 255, 0.55);
+      --accent: #e6a8b2;
+      --accent-strong: #d88997;
+      --text-main: #2a2a2a;
+      --text-soft: #5d5d5d;
     }
 
     * {
-      box-sizing: border-box;
       margin: 0;
       padding: 0;
-    }
-
-    html {
-      scroll-behavior: smooth;
+      box-sizing: border-box;
     }
 
     body {
-      font-family: 'Poppins', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-      color: var(--text-main);
-      background: radial-gradient(circle at top, #fdeef4 0, #f7f3f8 40%, #fdfbff 100%);
+      font-family: 'Poppins', sans-serif;
+      background: url('https://raw.githubusercontent.com/EdddGaar/Floreria/main/DisFlores.png') no-repeat center/cover;
       min-height: 100vh;
       overflow-x: hidden;
-    }
-
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    ::-webkit-scrollbar {
-      width: 8px;
-    }
-    ::-webkit-scrollbar-track {
-      background: #f4eff8;
-    }
-    ::-webkit-scrollbar-thumb {
-      background: #c4b3d2;
-      border-radius: 999px;
-    }
-
-    .page {
       position: relative;
-      min-height: 100vh;
-      isolation: isolate;
     }
 
-    .container {
-      max-width: 1120px;
-      margin: 0 auto;
-      padding: 0 1.25rem;
-    }
-
-    /* Particles layer */
-    #particles-js {
+    /* Filter layer for readability */
+    body::before {
+      content: "";
       position: fixed;
       inset: 0;
+      backdrop-filter: blur(6px);
+      background: var(--bg-overlay);
       z-index: -1;
     }
 
-    /* NAVBAR */
-    .navbar {
-      position: sticky;
-      top: 0;
-      z-index: 40;
-      backdrop-filter: blur(18px);
-      background: linear-gradient(to bottom, rgba(250,248,252,0.96), rgba(250,248,252,0.8), transparent);
-      border-bottom: 1px solid rgba(223, 211, 235, 0.7);
-    }
-
-    .navbar-inner {
-      height: var(--nav-height);
+    /* Header minimalista */
+    header {
+      width: 100%;
+      padding: 22px 6%;
       display: flex;
-      align-items: center;
       justify-content: space-between;
-      gap: 1rem;
+      align-items: center;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 10;
+      backdrop-filter: blur(10px);
     }
 
-    .brand {
+    /* Logo */
+    .logo {
       display: flex;
       align-items: center;
-      gap: 0.6rem;
+      gap: 8px;
     }
 
-    .brand-logo-wrap {
+    .logo img {
       width: 40px;
       height: 40px;
-      border-radius: 999px;
-      background: radial-gradient(circle at 30% 30%, rgba(237,159,191,0.9), #fdfbff);
-      box-shadow: 0 12px 30px rgba(232, 153, 188, 0.65);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      overflow: hidden;
-      border: 1px solid rgba(235, 176, 200, 0.7);
-    }
-
-    .brand-logo {
-      width: 34px;
-      height: 34px;
+      border-radius: 50%;
       object-fit: contain;
+      box-shadow: 0 5px 10px rgba(0,0,0,0.15);
     }
 
-    .brand-title {
+    .logo-text {
       font-family: 'Playfair Display', serif;
       font-size: 1.1rem;
-      letter-spacing: 0.05em;
-    }
-
-    .brand-sub {
-      font-size: 0.68rem;
-      text-transform: uppercase;
-      letter-spacing: 0.18em;
-      color: var(--text-soft);
-    }
-
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 1.2rem;
-      font-size: 0.9rem;
-      position: relative;
-    }
-
-    .nav-link {
-      padding: 0.2rem 0;
-      color: var(--text-soft);
-      cursor: pointer;
-      transition: color var(--transition-fast), opacity var(--transition-fast);
-      opacity: 0.85;
-      position: relative;
-      white-space: nowrap;
-    }
-
-    .nav-link.active,
-    .nav-link:hover {
-      color: var(--accent-strong);
-      opacity: 1;
-    }
-
-    .nav-indicator {
-      position: absolute;
-      bottom: -4px;
-      height: 2px;
-      border-radius: 999px;
-      background: linear-gradient(90deg, var(--accent), var(--accent-strong));
-      transition: transform 220ms ease-out, width 220ms ease-out, opacity 180ms ease-out;
-      opacity: 0;
-    }
-
-    .nav-cta {
-      padding: 0.45rem 1.1rem;
-      border-radius: 999px;
-      border: 1px solid rgba(237,159,191,0.7);
-      background: linear-gradient(135deg, #ffeef5, #fdfbff);
-      color: var(--accent-strong);
-      font-size: 0.8rem;
-      font-weight: 500;
-      display: flex;
-      align-items: center;
-      gap: 0.4rem;
-      box-shadow: 0 10px 25px rgba(232, 153, 188, 0.35);
-      transition: transform 150ms ease-out, box-shadow 150ms ease-out, border-color 150ms ease-out, background 150ms ease-out;
-      cursor: pointer;
-      white-space: nowrap;
-    }
-
-    .nav-cta:hover {
-      transform: translateY(-1px);
-      box-shadow: 0 16px 35px rgba(232, 153, 188, 0.45);
-      border-color: var(--accent-strong);
-      background: linear-gradient(135deg, #ffe3f0, #fff7fb);
-    }
-
-    .nav-toggle {
-      display: none;
-      border: none;
-      background: transparent;
-      cursor: pointer;
-      font-size: 1.4rem;
+      letter-spacing: 0.03em;
       color: var(--text-main);
+    }
+
+    /* Menú estilo tabs */
+    nav {
+      display: flex;
+      gap: 28px;
+    }
+
+    nav a {
+      font-size: 0.9rem;
+      letter-spacing: 0.04em;
+      color: var(--text-soft);
+      transition: color 0.2s ease;
+    }
+
+    nav a:hover {
+      color: var(--accent-strong);
     }
 
     /* HERO */
     .hero {
-      padding: 3.5rem 0 2.8rem;
-    }
-
-    .hero-layout {
-      display: grid;
-      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
-      gap: 2.5rem;
-      align-items: center;
-    }
-
-    .hero-kicker {
-      font-size: 0.78rem;
-      text-transform: uppercase;
-      letter-spacing: 0.22em;
-      color: var(--text-soft);
-      margin-bottom: 0.75rem;
-    }
-
-    .hero-title {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(2.2rem, 3.4vw, 3rem);
-      line-height: 1.1;
-      margin-bottom: 0.8rem;
-      color: #2c2434;
-    }
-
-    .hero-title span.accent {
-      background: linear-gradient(120deg, #e47aa3, #e9a9b7);
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
-    }
-
-    .hero-subtitle {
-      font-size: 0.96rem;
-      color: var(--text-soft);
-      max-width: 33rem;
-      margin-bottom: 1.6rem;
-    }
-
-    .hero-cta-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.9rem 1.1rem;
-      align-items: center;
-      margin-bottom: 1.6rem;
-    }
-
-    .btn-primary {
-      padding: 0.7rem 1.7rem;
-      border-radius: 999px;
-      border: none;
-      cursor: pointer;
-      font-size: 0.9rem;
-      font-weight: 500;
-      background: linear-gradient(135deg, #e47aa3, #ed9fbf);
-      color: #fff8fb;
-      box-shadow: 0 18px 45px rgba(232, 153, 188, 0.65);
-      display: inline-flex;
-      align-items: center;
-      gap: 0.45rem;
-      transition: transform 120ms ease-out, box-shadow 120ms ease-out, filter 120ms ease-out;
-    }
-
-    .btn-primary:hover {
-      transform: translateY(-1px);
-      filter: brightness(1.04);
-      box-shadow: 0 22px 55px rgba(232, 153, 188, 0.8);
-    }
-
-    .btn-ghost {
-      padding: 0.65rem 1.4rem;
-      border-radius: 999px;
-      border: 1px solid rgba(201, 184, 215, 0.8);
-      background: rgba(255,255,255,0.7);
-      backdrop-filter: blur(12px);
-      color: var(--text-main);
-      font-size: 0.85rem;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.4rem;
-      cursor: pointer;
-      transition: background 140ms ease-out, border-color 140ms ease-out, transform 140ms ease-out, box-shadow 140ms ease-out;
-      box-shadow: 0 10px 30px rgba(169, 150, 191, 0.2);
-    }
-
-    .btn-ghost:hover {
-      background: rgba(255,255,255,0.95);
-      border-color: var(--accent);
-      box-shadow: 0 14px 36px rgba(169, 150, 191, 0.3);
-      transform: translateY(-1px);
-    }
-
-    .hero-note {
-      font-size: 0.8rem;
-      color: var(--text-soft);
-      display: flex;
-      align-items: center;
-      gap: 0.45rem;
-    }
-
-    .hero-note-tag {
-      padding: 0.18rem 0.6rem;
-      border-radius: 999px;
-      background: rgba(255,255,255,0.7);
-      border: 1px solid rgba(201, 184, 215, 0.7);
-      font-size: 0.72rem;
-    }
-
-    /* Hero card glass */
-    .hero-card {
-      border-radius: 24px;
-      background: radial-gradient(circle at top left, rgba(255,255,255,0.95), rgba(255,255,255,0.72));
-      border: 1px solid rgba(215, 202, 232, 0.85);
-      box-shadow: var(--shadow-soft);
-      padding: 1.1rem 1.2rem 1.3rem;
-      position: relative;
-      overflow: hidden;
-      backdrop-filter: blur(18px);
-    }
-
-    .hero-card::before {
-      content: "";
-      position: absolute;
-      width: 160%;
-      height: 160%;
-      top: -40%;
-      right: -40%;
-      background: radial-gradient(circle, rgba(237,159,191,0.35), transparent 60%);
-      opacity: 0.7;
-      pointer-events: none;
-    }
-
-    .hero-card-inner {
-      position: relative;
-      z-index: 1;
-    }
-
-    .hero-card-tag {
-      font-size: 0.72rem;
-      text-transform: uppercase;
-      letter-spacing: 0.16em;
-      color: var(--text-soft);
-      margin-bottom: 0.4rem;
-    }
-
-    .hero-card-title {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.25rem;
-      margin-bottom: 0.55rem;
-    }
-
-    .hero-card-text {
-      font-size: 0.8rem;
-      color: var(--text-soft);
-      margin-bottom: 0.8rem;
-    }
-
-    .hero-chip-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.35rem;
-      margin-bottom: 0.9rem;
-    }
-
-    .hero-chip {
-      font-size: 0.72rem;
-      padding: 0.25rem 0.65rem;
-      border-radius: 999px;
-      border: 1px solid rgba(207, 190, 221, 0.9);
-      background: rgba(255,255,255,0.8);
-    }
-
-    .hero-mini {
-      font-size: 0.74rem;
-      color: var(--text-soft);
-    }
-
-    /* Sections */
-    .section {
-      padding: 2.3rem 0 2.1rem;
-    }
-
-    .section-header {
-      text-align: center;
-      margin-bottom: 1.9rem;
-    }
-
-    .section-kicker {
-      font-size: 0.78rem;
-      text-transform: uppercase;
-      letter-spacing: 0.2em;
-      color: var(--text-soft);
-      margin-bottom: 0.3rem;
-    }
-
-    .section-title {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.6rem;
-      margin-bottom: 0.4rem;
-    }
-
-    .section-desc {
-      font-size: 0.86rem;
-      color: var(--text-soft);
-      max-width: 32rem;
-      margin: 0 auto;
-    }
-
-    .grid {
-      display: grid;
-      gap: 1.1rem;
-    }
-
-    @media (min-width: 768px) {
-      .grid-cols-3-md {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-      }
-      .hero-layout {
-        grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
-      }
-    }
-
-    /* Cards categorías */
-    .cat-card {
-      border-radius: 18px;
-      background: rgba(255,255,255,0.9);
-      border: 1px solid rgba(215, 202, 232, 0.9);
-      box-shadow: 0 14px 40px rgba(188, 167, 206, 0.25);
-      padding: 0.85rem 0.9rem 1rem;
-      position: relative;
-      overflow: hidden;
-      cursor: pointer;
-      transition: transform 150ms ease-out, box-shadow 150ms ease-out, border-color 150ms ease-out, background 150ms ease-out;
-    }
-
-    .cat-card::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(135deg, rgba(237,159,191,0.08), transparent);
-      opacity: 0;
-      transition: opacity 140ms ease-out;
-    }
-
-    .cat-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 18px 50px rgba(188, 167, 206, 0.35);
-      border-color: rgba(237,159,191,0.85);
-      background: rgba(255,255,255,0.98);
-    }
-
-    .cat-card:hover::before {
-      opacity: 1;
-    }
-
-    .cat-tag {
-      font-size: 0.74rem;
-      color: var(--accent-strong);
-      font-weight: 500;
-      margin-bottom: 0.15rem;
-    }
-
-    .cat-title {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.02rem;
-      margin-bottom: 0.3rem;
-    }
-
-    .cat-text {
-      font-size: 0.8rem;
-      color: var(--text-soft);
-      margin-bottom: 0.6rem;
-    }
-
-    .cat-footer {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      font-size: 0.76rem;
-      color: var(--text-soft);
-    }
-
-    .cat-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.25rem;
-      font-size: 0.76rem;
-      color: var(--accent-strong);
-    }
-
-    .divider {
-      border: 0;
-      border-top: 1px solid rgba(222, 210, 233, 0.9);
-      margin: 1.6rem 0 1.7rem;
-    }
-
-    /* Contacto */
-    .contact-card {
-      border-radius: 20px;
-      background: rgba(255,255,255,0.9);
-      border: 1px solid rgba(215, 202, 232, 0.9);
-      box-shadow: var(--shadow-soft);
-      padding: 1.2rem 1.1rem;
-      display: grid;
-      gap: 1rem;
-    }
-
-    @media (min-width: 768px) {
-      .contact-card {
-        grid-template-columns: minmax(0, 1.4fr) minmax(0, 0.9fr);
-        align-items: center;
-      }
-    }
-
-    .contact-title {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.25rem;
-      margin-bottom: 0.5rem;
-    }
-
-    .contact-text {
-      font-size: 0.86rem;
-      color: var(--text-soft);
-      margin-bottom: 0.9rem;
-    }
-
-    .contact-list {
-      font-size: 0.8rem;
-      color: var(--text-soft);
-      list-style: none;
-      padding-left: 0;
-      margin-bottom: 0.7rem;
-    }
-    .contact-list li {
-      display: flex;
-      align-items: center;
-      gap: 0.4rem;
-      margin-bottom: 0.25rem;
-    }
-
-    .bullet {
-      width: 6px;
-      height: 6px;
-      border-radius: 999px;
-      background: linear-gradient(135deg, #e47aa3, #ed9fbf);
-    }
-
-    .contact-side {
-      font-size: 0.78rem;
-      color: var(--text-soft);
-      border-radius: 16px;
-      padding: 0.9rem 0.8rem;
-      background: rgba(253, 247, 255, 0.9);
-      border: 1px solid rgba(216, 199, 232, 0.9);
-    }
-
-    .social-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.5rem 0.7rem;
-      font-size: 0.8rem;
-      margin-top: 0.45rem;
-    }
-
-    .social-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.35rem;
-      padding: 0.26rem 0.7rem;
-      border-radius: 999px;
-      border: 1px solid rgba(211, 192, 230, 0.9);
-      background: rgba(255,255,255,0.9);
-      color: var(--text-main);
-      cursor: pointer;
-      transition: background 140ms ease-out, border-color 140ms ease-out, transform 140ms ease-out, box-shadow 140ms ease-out;
-      box-shadow: 0 8px 20px rgba(185, 167, 205, 0.25);
-    }
-
-    .social-link span.icon {
-      font-size: 1rem;
-    }
-
-    .social-link:hover {
-      transform: translateY(-1px);
-      background: #fff7fb;
-      border-color: var(--accent);
-      box-shadow: 0 12px 28px rgba(185, 167, 205, 0.35);
-    }
-
-    /* Footer */
-    .footer {
-      padding: 1.6rem 0 2.2rem;
-      font-size: 0.75rem;
-      color: var(--text-soft);
-      border-top: 1px solid rgba(222, 210, 233, 0.9);
-      margin-top: 2rem;
-    }
-
-    .footer-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.7rem;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .footer-links {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.6rem 0.9rem;
-    }
-
-    /* Botón flotante WhatsApp */
-    .whatsapp-float {
-      position: fixed;
-      bottom: 1.3rem;
-      right: 1.3rem;
-      z-index: 50;
-    }
-
-    .whatsapp-btn {
-      width: 52px;
-      height: 52px;
-      border-radius: 999px;
-      border: none;
-      background: radial-gradient(circle at 30% 20%, #22c55e, #16a34a);
-      box-shadow: 0 18px 40px rgba(22,163,74,0.7);
+      width: 100%;
+      min-height: 100vh;
+      padding: 0 6%;
       display: flex;
       align-items: center;
       justify-content: center;
-      cursor: pointer;
+      text-align: center;
     }
 
-    .whatsapp-btn span {
-      font-size: 1.6rem;
+    .hero-content {
+      max-width: 680px;
+      padding: 40px 45px;
+      background: var(--glass-bg);
+      backdrop-filter: blur(14px);
+      border-radius: 18px;
+      border: 1px solid rgba(255,255,255,0.4);
+      box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+      animation: fadeIn 1.6s ease;
     }
 
-    .whatsapp-hint {
-      position: absolute;
-      right: 60px;
-      bottom: 7px;
-      background: rgba(255,255,255,0.96);
-      border-radius: 999px;
-      padding: 0.25rem 0.7rem;
-      font-size: 0.72rem;
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.7rem;
+      line-height: 1.12;
+      margin-bottom: 12px;
       color: var(--text-main);
-      border: 1px solid rgba(211, 192, 230, 0.9);
-      white-space: nowrap;
-      opacity: 0;
-      transform: translateX(8px);
-      pointer-events: none;
-      transition: opacity 160ms ease-out, transform 160ms ease-out;
-      box-shadow: 0 10px 26px rgba(188, 167, 206, 0.35);
     }
 
-    .whatsapp-btn:hover + .whatsapp-hint {
-      opacity: 1;
-      transform: translateX(0);
+    .hero p {
+      font-size: 1rem;
+      color: var(--text-soft);
+      margin-bottom: 25px;
+    }
+
+    /* Botón principal */
+    .btn-primary {
+      display: inline-block;
+      padding: 12px 32px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, var(--accent), var(--accent-strong));
+      color: white;
+      font-size: 0.95rem;
+      letter-spacing: 0.03em;
+      box-shadow: 0 12px 28px rgba(214,140,150,0.34);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      text-decoration: none;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 18px 40px rgba(214,140,150,0.45);
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(25px); }
+      to { opacity: 1; transform: translateY(0); }
     }
 
     /* Responsive */
-    @media (max-width: 767px) {
-      .hero {
-        padding-top: 2.4rem;
-      }
-      .hero-layout {
-        grid-template-columns: minmax(0,1fr);
-      }
-      .hero-card {
-        margin-top: 0.5rem;
-      }
-      .navbar-inner {
-        padding-inline: 0.8rem;
-      }
-      .nav-links.desktop {
-        display: none;
-      }
-      .nav-toggle {
-        display: block;
-      }
-      .nav-links.mobile {
-        display: none;
-        flex-direction: column;
-        gap: 0.3rem;
-        padding: 0.5rem 1.1rem 0.8rem;
-        background: rgba(250,248,252,0.98);
-        border-top: 1px solid rgba(223, 211, 235, 0.9);
-      }
-      .nav-links.mobile.open {
-        display: flex;
-      }
+    @media (max-width: 768px) {
+      nav { display: none; }
+      header { justify-content: center; }
+      .hero h1 { font-size: 2.1rem; }
+      .hero-content { padding: 30px 28px; }
     }
   </style>
 </head>
-
 <body>
-  <div id="particles-js"></div>
 
-  <div class="page">
-    <!-- NAVBAR -->
-    <header class="navbar">
-      <div class="container navbar-inner">
-        <div class="brand">
-          <div class="brand-logo-wrap">
-            <img src="https://raw.githubusercontent.com/EdddGaar/Floreria/main/FLORERIA-Logo.png" alt="Florería San Miguel Logo" class="brand-logo">
-          </div>
-          <div>
-            <div class="brand-title">Florería San Miguel</div>
-            <div class="brand-sub">ZINACANTEPEC · EVENTOS</div>
-          </div>
-        </div>
-
-        <!-- Desktop nav -->
-        <nav class="nav-links desktop" id="navDesktop">
-          <span class="nav-link active" data-target="#inicio">Inicio</span>
-          <span class="nav-link" data-target="#seccion-celebraciones">Celebraciones</span>
-          <span class="nav-link" data-target="#seccion-catalogo">Catálogo</span>
-          <span class="nav-link" data-target="#contacto">Contacto</span>
-          <span class="nav-cta" data-target="#contacto">
-            <span>Agenda tu evento</span>
-            <span>✉️</span>
-          </span>
-          <span class="nav-indicator" id="navIndicator"></span>
-        </nav>
-
-        <!-- Mobile nav toggle -->
-        <button class="nav-toggle" id="navToggle" aria-label="Abrir menú">
-          ☰
-        </button>
-      </div>
-
-      <!-- Mobile nav -->
-      <nav class="nav-links mobile" id="navMobile">
-        <span class="nav-link active" data-target="#inicio">Inicio</span>
-        <span class="nav-link" data-target="#seccion-celebraciones">Celebraciones</span>
-        <span class="nav-link" data-target="#seccion-catalogo">Catálogo</span>
-        <span class="nav-link" data-target="#contacto">Contacto</span>
-      </nav>
-    </header>
-
-    <!-- HERO -->
-    <main>
-      <section id="inicio" class="hero">
-        <div class="container hero-layout">
-          <div>
-            <div class="hero-kicker">FLORES PARA MOMENTOS INOLVIDABLES</div>
-            <h1 class="hero-title">
-              Tu evento <span class="accent">100% personalizado</span>
-              con diseño floral elegante.
-            </h1>
-            <p class="hero-subtitle">
-              En Florería San Miguel te ayudamos a elegir portadas de iglesia, arreglos para autos, centros de mesa y detalles florales que combinan con los colores de tu evento y el estilo del salón.
-            </p>
-
-            <div class="hero-cta-row">
-              <a href="#seccion-celebraciones" class="btn-primary">
-                <span>Ver tipos de arreglos</span>
-                <span>⬇</span>
-              </a>
-              <a
-                href="https://wa.me/527228966441?text=Hola%20Florer%C3%ADa%20San%20Miguel%2C%20quiero%20informaci%C3%B3n%20para%20un%20evento."
-                class="btn-ghost"
-                target="_blank" rel="noopener noreferrer"
-              >
-                <span>Hablar por WhatsApp</span>
-                <span>💬</span>
-              </a>
-            </div>
-
-            <div class="hero-note">
-              <span class="hero-note-tag">Atención en local y en línea</span>
-              <span>• Elegimos contigo los arreglos viendo fotos reales de trabajos hechos por Juanito.</span>
-            </div>
-          </div>
-
-          <aside class="hero-card" aria-label="Destacado">
-            <div class="hero-card-inner">
-              <div class="hero-card-tag">Florería San Miguel · Juanito el florero</div>
-              <div class="hero-card-title">Todo tu evento, en un solo estilo floral</div>
-              <p class="hero-card-text">
-                Coordinamos iglesia, auto y salón con la misma gama de colores, adaptándonos a tu presupuesto. Te mostramos opciones con fotos de portadas, centros de mesa y arreglos que ya hemos realizado.
-              </p>
-              <div class="hero-chip-row">
-                <span class="hero-chip">Bodas</span>
-                <span class="hero-chip">XV años</span>
-                <span class="hero-chip">Portadas de iglesia</span>
-                <span class="hero-chip">Autos decorados</span>
-                <span class="hero-chip">Eventos familiares</span>
-              </div>
-              <p class="hero-mini">
-                Solo necesitamos la fecha, el lugar, los colores de manteles y el tamaño del auto; con eso te recomendamos el número de arreglos ideal y te mostramos el catálogo adecuado.
-              </p>
-            </div>
-          </aside>
-        </div>
-      </section>
-
-      <hr class="divider" />
-
-      <!-- SECCIÓN CELEBRACIONES -->
-      <section id="seccion-celebraciones" class="section">
-        <div class="container">
-          <div class="section-header">
-            <div class="section-kicker">PARA CADA CELEBRACIÓN</div>
-            <h2 class="section-title">Elige el tipo de evento que quieres decorar</h2>
-            <p class="section-desc">
-              Selecciona la celebración y después vemos juntos los estilos y combinaciones de color que mejor se adaptan a tu idea.
-            </p>
-          </div>
-
-          <div class="grid grid-cols-3-md">
-            <article class="cat-card">
-              <div class="cat-tag">Eventos principales</div>
-              <h3 class="cat-title">Bodas</h3>
-              <p class="cat-text">
-                Portadas de iglesia, mesa principal, centros de mesa y arreglos para entrada o recepción.
-              </p>
-              <div class="cat-footer">
-                <span>Estilos clásico, elegante, boho...</span>
-                <a href="#seccion-catalogo" class="cat-link">
-                  Ver opciones <span>⟶</span>
-                </a>
-              </div>
-            </article>
-
-            <article class="cat-card">
-              <div class="cat-tag">Juventud y color</div>
-              <h3 class="cat-title">XV años</h3>
-              <p class="cat-text">
-                Decoración floral para misa y salón en gamas de rosa, lila, azul rey, blanco y temáticos.
-              </p>
-              <div class="cat-footer">
-                <span>Combinamos con tu vestido</span>
-                <a href="#seccion-catalogo" class="cat-link">
-                  Ver opciones <span>⟶</span>
-                </a>
-              </div>
-            </article>
-
-            <article class="cat-card">
-              <div class="cat-tag">Otros eventos</div>
-              <h3 class="cat-title">Sociales & especiales</h3>
-              <p class="cat-text">
-                Bautizos, primeras comuniones, aniversarios, funerales y eventos familiares con arreglos sobrios y elegantes.
-              </p>
-              <div class="cat-footer">
-                <span>Centros de mesa y detalles</span>
-                <a href="#seccion-catalogo" class="cat-link">
-                  Ver opciones <span>⟶</span>
-                </a>
-              </div>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <hr class="divider" />
-
-      <!-- SECCIÓN CATÁLOGO RESUMEN -->
-      <section id="seccion-catalogo" class="section">
-        <div class="container">
-          <div class="section-header">
-            <div class="section-kicker">CATÁLOGO DESTACADO</div>
-            <h2 class="section-title">Algunos tipos de arreglos que puedes elegir</h2>
-            <p class="section-desc">
-              Desde esta página puedes acceder a las galerías con fotos de trabajos reales. En el local también tendrás un código QR
-              para ver todo el catálogo en tu celular.
-            </p>
-          </div>
-
-          <div class="grid grid-cols-3-md">
-            <!-- Portadas -->
-            <article class="cat-card">
-              <div class="cat-tag">Iglesia</div>
-              <h3 class="cat-title">Portadas y pasillos</h3>
-              <p class="cat-text">
-                Arcos, columnas, altares y pasillos decorados de acuerdo al tamaño de la iglesia.
-              </p>
-              <div class="cat-footer">
-                <span>Calculamos cuántos arreglos necesitas</span>
-                <a
-                  href="REEMPLAZA_AQUI_URL_ALBUM_PORTADAS_GENERAL"
-                  class="cat-link"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Ver galería <span>⟶</span>
-                </a>
-              </div>
-            </article>
-
-            <!-- Autos -->
-            <article class="cat-card">
-              <div class="cat-tag">Autos</div>
-              <h3 class="cat-title">Arreglos para coche</h3>
-              <p class="cat-text">
-                Moños, frontales y laterales seguros para no maltratar la pintura y resaltar en fotos.
-              </p>
-              <div class="cat-footer">
-                <span>Boda, XV y eventos</span>
-                <a
-                  href="REEMPLAZA_AQUI_URL_ALBUM_AUTOS_GENERAL"
-                  class="cat-link"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Ver galería <span>⟶</span>
-                </a>
-              </div>
-            </article>
-
-            <!-- Centros de mesa -->
-            <article class="cat-card">
-              <div class="cat-tag">Salón</div>
-              <h3 class="cat-title">Centros de mesa</h3>
-              <p class="cat-text">
-                Diseños bajos y altos, modernos o clásicos, pensados para no estorbar la vista de tus invitados.
-              </p>
-              <div class="cat-footer">
-                <span>Diferentes presupuestos</span>
-                <a
-                  href="REEMPLAZA_AQUI_URL_ALBUM_EVENTOS_GENERAL"
-                  class="cat-link"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Ver galería <span>⟶</span>
-                </a>
-              </div>
-            </article>
-
-            <!-- Ramos -->
-            <article class="cat-card">
-              <div class="cat-tag">Detalles personales</div>
-              <h3 class="cat-title">Ramos y arreglos especiales</h3>
-              <p class="cat-text">
-                Ramos de novia, ramilletes y arreglos para regalar en fechas importantes.
-              </p>
-              <div class="cat-footer">
-                <span>Estilo clásico o moderno</span>
-                <a
-                  href="REEMPLAZA_AQUI_URL_ALBUM_BODAS_GENERAL"
-                  class="cat-link"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Ver galería <span>⟶</span>
-                </a>
-              </div>
-            </article>
-
-            <!-- Funerales -->
-            <article class="cat-card">
-              <div class="cat-tag">Funerales</div>
-              <h3 class="cat-title">Coronas y arreglos</h3>
-              <p class="cat-text">
-                Diseños sobrios y respetuosos con diferentes tamaños según la necesidad.
-              </p>
-              <div class="cat-footer">
-                <span>Entrega rápida</span>
-                <a
-                  href="REEMPLAZA_AQUI_URL_ALBUM_FUNERALES_GENERAL"
-                  class="cat-link"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Ver galería <span>⟶</span>
-                </a>
-              </div>
-            </article>
-
-            <!-- Express -->
-            <article class="cat-card">
-              <div class="cat-tag">Hoy mismo</div>
-              <h3 class="cat-title">Arreglos express</h3>
-              <p class="cat-text">
-                Opciones listas en poco tiempo para cumpleaños, detalles o aniversarios.
-              </p>
-              <div class="cat-footer">
-                <span>Preguntar disponibilidad</span>
-                <a
-                  href="https://wa.me/527228966441?text=Hola%2C%20%C2%BFqu%C3%A9%20arreglos%20express%20tienen%20disponibles%20hoy%3F"
-                  class="cat-link"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Escribir por WhatsApp <span>⟶</span>
-                </a>
-              </div>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <hr class="divider" />
-
-      <!-- CONTACTO -->
-      <section id="contacto" class="section">
-        <div class="container">
-          <div class="section-header">
-            <div class="section-kicker">CONTACTO Y COTIZACIONES</div>
-            <h2 class="section-title">Platiquemos sobre tu evento</h2>
-            <p class="section-desc">
-              Cuéntanos la fecha, el lugar y los colores de tu evento. Con esa información Juanito puede recomendarte
-              el tipo y número de arreglos ideales para que todo se vea equilibrado.
-            </p>
-          </div>
-
-          <div class="contact-card">
-            <div>
-              <div class="contact-title">Florería San Miguel · Zinacantepec</div>
-              <p class="contact-text">
-                Te atendemos directamente en el local o por WhatsApp. Si traes fotos de ejemplo o los colores del salón,
-                encontramos juntos la mejor combinación de arreglos.
-              </p>
-              <ul class="contact-list">
-                <li>
-                  <span class="bullet"></span>
-                  <span><strong>Horario:</strong> Lunes a domingo · Horario flexible según eventos.</span>
-                </li>
-                <li>
-                  <span class="bullet"></span>
-                  <span><strong>Ubicación:</strong> Zinacantepec, Estado de México.</span>
-                </li>
-                <li>
-                  <span class="bullet"></span>
-                  <span><strong>WhatsApp:</strong> +52 722 896 6441</span>
-                </li>
-              </ul>
-
-              <div class="hero-cta-row">
-                <a
-                  href="https://wa.me/527228966441?text=Hola%20Florer%C3%ADa%20San%20Miguel%2C%20quiero%20cotizar%20arreglos%20para%20un%20evento."
-                  class="btn-primary"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <span>Enviar mensaje por WhatsApp</span>
-                  <span>💬</span>
-                </a>
-                <a
-                  href="REEMPLAZA_AQUI_URL_FORMULARIO_GOOGLE"
-                  class="btn-ghost"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <span>Llenar formulario de cotización</span>
-                </a>
-              </div>
-
-              <div class="social-row">
-                <a
-                  href="https://www.facebook.com/share/17CNg5ki17/"
-                  class="social-link"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <span class="icon">📘</span>
-                  <span>Florería San Miguel</span>
-                </a>
-                <a
-                  href="https://www.tiktok.com/@juanmanuelsanch716?_r=1&_t=ZS-91v3rAaF8mC"
-                  class="social-link"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <span class="icon">🎵</span>
-                  <span>TikTok Juanito</span>
-                </a>
-              </div>
-            </div>
-
-            <div class="contact-side">
-              <p style="margin-bottom:0.5rem;"><strong>Tip para una cotización más precisa:</strong></p>
-              <p style="margin-bottom:0.3rem;">Antes de escribirnos, ten a la mano:</p>
-              <ul class="contact-list" style="margin-bottom:0.4rem;">
-                <li>
-                  <span class="bullet"></span>
-                  <span>Colores de manteles y decoración del salón.</span>
-                </li>
-                <li>
-                  <span class="bullet"></span>
-                  <span>Tamaño de la iglesia y número aproximado de bancas.</span>
-                </li>
-                <li>
-                  <span class="bullet"></span>
-                  <span>Modelo y tamaño del auto, si quieres arreglo para coche.</span>
-                </li>
-              </ul>
-              <p>Con esos datos podemos mostrarte rápidamente las fotos que más se parecen a cómo quedará tu evento.</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- FOOTER -->
-      <footer class="footer">
-        <div class="container footer-row">
-          <div>© <span id="year"></span> Florería San Miguel · Zinacantepec, Edo. Méx.</div>
-          <div class="footer-links">
-            <span>Portadas · Autos · Bodas · XV · Eventos</span>
-            <span>Catálogo digital para atención en local y en línea</span>
-          </div>
-        </div>
-      </footer>
-    </main>
-
-    <!-- WHATSAPP FLOAT -->
-    <div class="whatsapp-float">
-      <a
-        href="https://wa.me/527228966441?text=Hola%20Florer%C3%ADa%20San%20Miguel%2C%20me%20gustar%C3%ADa%20m%C3%A1s%20informaci%C3%B3n."
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        <button class="whatsapp-btn" aria-label="Abrir WhatsApp">
-          <span>🟢</span>
-        </button>
-      </a>
-      <div class="whatsapp-hint">Escríbenos por WhatsApp</div>
+  <!-- NAV -->
+  <header>
+    <div class="logo">
+      <img src="https://raw.githubusercontent.com/EdddGaar/Floreria/main/FLORERIA-Logo.png" alt="logo">
+      <span class="logo-text">Florería San Miguel</span>
     </div>
-  </div>
+    <nav>
+      <a href="#inicio">Inicio</a>
+      <a href="#catalogo">Catálogo</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+  </header>
 
-  <!-- Particles.js -->
-  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+  <!-- HERO -->
+  <section class="hero" id="inicio">
+    <div class="hero-content">
+      <h1>Diseño floral elegante<br>para tus momentos especiales</h1>
+      <p>Juanito te ayudará a elegir los arreglos perfectos para tu boda, XV años o evento especial.</p>
+      <a href="#catalogo" class="btn-primary">Ver catálogo</a>
+    </div>
+  </section>
 
-  <script>
-    // Año dinámico
-    document.getElementById('year').textContent = new Date().getFullYear();
-
-    // Menú mobile
-    const navToggle = document.getElementById('navToggle');
-    const navMobile = document.getElementById('navMobile');
-    if (navToggle && navMobile) {
-      navToggle.addEventListener('click', () => {
-        navMobile.classList.toggle('open');
-      });
-
-      navMobile.querySelectorAll('.nav-link').forEach(link => {
-        link.addEventListener('click', () => {
-          navMobile.classList.remove('open');
-        });
-      });
-    }
-
-    // Magic navigation tabs (desktop + mobile)
-    const sections = ['#inicio', '#seccion-celebraciones', '#seccion-catalogo', '#contacto'];
-    const navDesktop = document.getElementById('navDesktop');
-    const navIndicator = document.getElementById('navIndicator');
-
-    function moveIndicator(element) {
-      if (!element || !navIndicator) return;
-      const rect = element.getBoundingClientRect();
-      const parentRect = navDesktop.getBoundingClientRect();
-      navIndicator.style.width = rect.width + 'px';
-      navIndicator.style.transform = 'translateX(' + (rect.left - parentRect.left) + 'px)';
-      navIndicator.style.opacity = 1;
-    }
-
-    function setActiveLinkBySection(id) {
-      document.querySelectorAll('.nav-links .nav-link').forEach(link => {
-        const target = link.getAttribute('data-target');
-        if (target === id) {
-          link.classList.add('active');
-          if (link.closest('.nav-links') === navDesktop) {
-            moveIndicator(link);
-          }
-        } else {
-          link.classList.remove('active');
-        }
-      });
-    }
-
-    document.querySelectorAll('.nav-links .nav-link, .nav-cta').forEach(link => {
-      const target = link.getAttribute('data-target');
-      if (!target) return;
-      link.addEventListener('click', (e) => {
-        e.preventDefault();
-        const section = document.querySelector(target);
-        if (section) {
-          const top = section.getBoundingClientRect().top + window.scrollY - (parseInt(getComputedStyle(document.documentElement).getPropertyValue('--nav-height')) - 10);
-          window.scrollTo({ top, behavior: 'smooth' });
-        }
-      });
-    });
-
-    // Destacar sección en scroll
-    window.addEventListener('scroll', () => {
-      let current = '#inicio';
-      const scrollY = window.scrollY;
-
-      sections.forEach(id => {
-        const el = document.querySelector(id);
-        if (!el) return;
-        const offsetTop = el.offsetTop - 90;
-        if (scrollY >= offsetTop) current = id;
-      });
-
-      setActiveLinkBySection(current);
-    });
-
-    // Inicializar indicador
-    window.addEventListener('load', () => {
-      const activeDesktop = navDesktop?.querySelector('.nav-link.active');
-      if (activeDesktop) moveIndicator(activeDesktop);
-    });
-
-    // Particles.js configuración suave
-    particlesJS('particles-js', {
-      "particles": {
-        "number": { "value": 55, "density": { "enable": true, "value_area": 900 } },
-        "color": { "value": ["#ed9fbf", "#f3d9e6", "#d7c6ea"] },
-        "shape": { "type": "circle" },
-        "opacity": { "value": 0.35, "random": true },
-        "size": { "value": 3, "random": true },
-        "line_linked": {
-          "enable": true,
-          "distance": 150,
-          "color": "#e3d5f2",
-          "opacity": 0.35,
-          "width": 1
-        },
-        "move": {
-          "enable": true,
-          "speed": 1.2,
-          "direction": "none",
-          "random": false,
-          "straight": false,
-          "out_mode": "out",
-          "bounce": false
-        }
-      },
-      "interactivity": {
-        "detect_on": "canvas",
-        "events": {
-          "onhover": { "enable": true, "mode": "grab" },
-          "onclick": { "enable": false },
-          "resize": true
-        },
-        "modes": {
-          "grab": { "distance": 140, "line_linked": { "opacity": 0.5 } }
-        }
-      },
-      "retina_detect": true
-    });
-  </script>
 </body>
 </html>
 
