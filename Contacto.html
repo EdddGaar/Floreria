@@ -59,7 +59,7 @@
       color: var(--text);
     }
 
-    /* CONTENEDOR */
+    /* CONTENEDOR FORMULARIO */
     .container {
       max-width: 650px;
       margin: 30px auto 60px;
@@ -106,7 +106,7 @@
       box-shadow: 0 15px 35px rgba(214, 140, 150, 0.5);
     }
 
-    /* BOTONES SOCIALES */
+    /* REDES SOCIALES */
     .social-section {
       text-align: center;
       margin-top: 40px;
@@ -128,11 +128,26 @@
       color: white;
       border-radius: 30px;
       font-size: 1rem;
+      transition: 0.25s ease;
     }
 
     .wa { background: #25D366; }
     .fb { background: #1877F2; }
     .tk { background: #000; }
+
+    .social-links a:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.28);
+    }
+
+    /* 🔧 SOLUCIÓN PARA CELULARES: desactivar hover */
+    @media (hover: none) {
+      .social-links a:hover,
+      button:hover {
+        transform: none !important;
+        box-shadow: none !important;
+      }
+    }
 
   </style>
 </head>
@@ -156,6 +171,7 @@
   <div class="social-title">Redes Sociales</div>
 
   <div class="social-links">
+
     <a class="wa" href="https://wa.me/527228966441?text=Hola,%20quiero%20más%20información%20sobre%20sus%20arreglos%20🌸" target="_blank">
       💬 WhatsApp
     </a>
@@ -167,12 +183,12 @@
     <a class="tk" href="https://www.tiktok.com/@juanmanuelsanch716?_r=1&_t=ZS-91v3rAaF8mC" target="_blank">
       🎵 TikTok
     </a>
+
   </div>
 </div>
 
 <div class="container">
-  <form action="https://formsubmit.co/Jjosue090917@gmail.com 
-" method="POST">
+  <form action="https://formsubmit.co/Jjosue090917@gmail.com" method="POST">
 
     <label>Nombre</label>
     <input type="text" name="nombre" required>
@@ -185,7 +201,7 @@
 
     <button type="submit">Enviar mensaje</button>
 
-    <!-- OPCIONES DE FORM SUBMIT -->
+    <!-- OPCIONES FORM SUBMIT -->
     <input type="hidden" name="_captcha" value="false">
     <input type="hidden" name="_template" value="box">
   </form>
@@ -193,3 +209,4 @@
 
 </body>
 </html>
+
