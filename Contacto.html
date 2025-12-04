@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Contacto | Florería San Miguel</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --glass: rgba(255, 255, 255, 0.55);
+      --shadow: rgba(0,0,0,0.12);
+      --primary: #e6a8b2;
+      --primary-dark: #d88997;
+      --text: #2a2a2a;
+      --soft: #666;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #fff7fa;
+      margin: 0;
+    }
+
+    /* HEADER */
+    header {
+      width: 100%;
+      padding: 20px 6%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      background: rgba(255,255,255,0.9);
+      backdrop-filter: blur(10px);
+      box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+      z-index: 10;
+    }
+
+    nav a {
+      margin-left: 25px;
+      text-decoration: none;
+      font-size: 0.95rem;
+      color: var(--soft);
+      transition: 0.2s ease;
+    }
+
+    nav a:hover {
+      color: var(--primary);
+    }
+
+    /* TITULO */
+    h1 {
+      text-align: center;
+      margin: 40px 0 10px;
+      font-family: "Playfair Display", serif;
+      font-size: 2.6rem;
+      color: var(--text);
+    }
+
+    /* CONTENEDOR */
+    .container {
+      max-width: 650px;
+      margin: 30px auto 60px;
+      padding: 35px;
+      background: var(--glass);
+      backdrop-filter: blur(14px);
+      border-radius: 18px;
+      box-shadow: 0 15px 40px var(--shadow);
+      border: 1px solid rgba(255,255,255,0.65);
+    }
+
+    label {
+      font-weight: 500;
+      color: var(--text);
+      margin-top: 15px;
+      display: block;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 12px;
+      margin-top: 6px;
+      border-radius: 12px;
+      border: 1px solid #ccc;
+      font-family: inherit;
+    }
+
+    button {
+      width: 100%;
+      padding: 14px;
+      margin-top: 20px;
+      background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+      border: none;
+      border-radius: 30px;
+      color: white;
+      font-size: 1rem;
+      cursor: pointer;
+      box-shadow: 0 10px 25px rgba(214, 140, 150, 0.35);
+      transition: 0.25s ease;
+    }
+
+    button:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 15px 35px rgba(214, 140, 150, 0.5);
+    }
+
+    /* BOTONES SOCIALES */
+    .social-section {
+      text-align: center;
+      margin-top: 40px;
+    }
+
+    .social-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.6rem;
+      margin-bottom: 20px;
+      color: var(--primary-dark);
+    }
+
+    .social-links a {
+      display: block;
+      width: 80%;
+      margin: 10px auto;
+      padding: 12px;
+      text-decoration: none;
+      color: white;
+      border-radius: 30px;
+      font-size: 1rem;
+    }
+
+    .wa { background: #25D366; }
+    .fb { background: #1877F2; }
+    .tk { background: #000; }
+
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="logo" style="display:flex; align-items:center; gap:8px;">
+    <img src="https://raw.githubusercontent.com/EdddGaar/Floreria/main/FLORERIA-Logo.png" width="42">
+    <span style="font-family:'Playfair Display'; font-size:1.2rem;">Florería San Miguel</span>
+  </div>
+  <nav>
+    <a href="index.html">Inicio</a>
+    <a href="Catalogo.html">Catálogo</a>
+    <a href="Contacto.html">Contacto</a>
+  </nav>
+</header>
+
+<h1>Contáctanos</h1>
+
+<div class="social-section">
+  <div class="social-title">Redes Sociales</div>
+
+  <div class="social-links">
+    <a class="wa" href="https://wa.me/5210000000000?text=Hola,%20quiero%20más%20información%20sobre%20sus%20arreglos%20🌸" target="_blank">
+      💬 WhatsApp
+    </a>
+
+    <a class="fb" href="https://www.facebook.com/" target="_blank">
+      🌺 Facebook
+    </a>
+
+    <a class="tk" href="https://www.tiktok.com/" target="_blank">
+      🎵 TikTok
+    </a>
+  </div>
+</div>
+
+<div class="container">
+  <form action="https://formsubmit.co/TU_CORREO_AQUI" method="POST">
+
+    <label>Nombre</label>
+    <input type="text" name="nombre" required>
+
+    <label>Correo</label>
+    <input type="email" name="correo" required>
+
+    <label>Mensaje</label>
+    <textarea name="mensaje" rows="4" required></textarea>
+
+    <button type="submit">Enviar mensaje</button>
+
+    <!-- OPCIONES DE FORM SUBMIT -->
+    <input type="hidden" name="_captcha" value="false">
+    <input type="hidden" name="_template" value="box">
+  </form>
+</div>
+
+</body>
+</html>
