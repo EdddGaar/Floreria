@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Catálogo | Florería San Miguel</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --glass: rgba(255, 255, 255, 0.55);
+      --shadow: rgba(0,0,0,0.12);
+      --primary: #e6a8b2;
+      --primary-dark: #d88997;
+      --text: #2a2a2a;
+      --soft: #666;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #fff8fb;
+      margin: 0;
+    }
+
+    /* HEADER */
+    header {
+      width: 100%;
+      padding: 20px 6%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      background: rgba(255,255,255,0.9);
+      backdrop-filter: blur(10px);
+      box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+      z-index: 10;
+    }
+
+    nav a {
+      margin-left: 25px;
+      text-decoration: none;
+      font-size: 0.95rem;
+      color: var(--soft);
+      transition: 0.2s ease;
+    }
+    nav a:hover {
+      color: var(--primary);
+    }
+
+    /* TITULOS DE SECCION */
+    h1 {
+      text-align: center;
+      margin-top: 30px;
+      font-family: 'Playfair Display', serif;
+      font-size: 2.6rem;
+      color: var(--text);
+    }
+    h2 {
+      margin-top: 60px;
+      margin-bottom: 20px;
+      font-family: 'Playfair Display', serif;
+      font-size: 1.8rem;
+      text-align: center;
+      color: var(--primary-dark);
+    }
+
+    /* GRID */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 28px;
+      padding: 20px 6% 60px;
+    }
+
+    /* CARD */
+    .card {
+      background: var(--glass);
+      backdrop-filter: blur(14px);
+      padding: 22px;
+      border-radius: 18px;
+      box-shadow: 0 12px 28px var(--shadow);
+      text-align: center;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+      border: 1px solid rgba(255,255,255,0.55);
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 18px 40px rgba(0,0,0,0.18);
+    }
+
+    .card h3 {
+      font-family: 'Playfair Display', serif;
+      margin-bottom: 12px;
+      color: var(--text);
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 10px 22px;
+      border-radius: 30px;
+      background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+      color: white;
+      text-decoration: none;
+      font-size: 0.9rem;
+      box-shadow: 0 6px 18px rgba(214,140,150,0.3);
+      transition: 0.2s ease;
+    }
+
+    .btn:hover {
+      box-shadow: 0 10px 28px rgba(214,140,150,0.45);
+      transform: translateY(-2px);
+    }
+
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="logo">
+    <img src="https://raw.githubusercontent.com/EdddGaar/Floreria/main/FLORERIA-Logo.png" width="42">
+    <span style="font-family:'Playfair Display'; margin-left:8px;">Florería San Miguel</span>
+  </div>
+  <nav>
+    <a href="index.html">Inicio</a>
+    <a href="Catalogo.html">Catálogo</a>
+    <a href="Contacto.html">Contacto</a>
+  </nav>
+</header>
+
+<h1>Catálogo de Arreglos</h1>
+
+<!-- =================== BODAS =================== -->
+<h2>Bodas</h2>
+<div class="grid">
+
+  <div class="card"><h3>Clásico</h3><a class="btn" href="https://photos.app.goo.gl/j1skCY6Vg8URmaLs9" target="_blank">Ver galería</a></div>
+  <div class="card"><h3>Elegante Blanco y Verde</h3><a class="btn" href="https://photos.app.goo.gl/TaknW45md73ZfZr88" target="_blank">Ver galería</a></div>
+  <div class="card"><h3>Dorado</h3><a class="btn" href="https://photos.app.goo.gl/FNwdoQPv3LvD9QiW9" target="_blank">Ver galería</a></div>
+  <div class="card"><h3>Minimalista</h3><a class="btn" href="https://photos.app.goo.gl/YyqzQdToNeRWL3Bi7" target="_blank">Ver galería</a></div>
+  <div class="card"><h3>Mesa Principal</h3><a class="btn" href="https://photos.app.goo.gl/8v3rAyE3DU62PBhz7" target="_blank">Ver galería</a></div>
+  <div class="card"><h3>Centro de Mesa</h3><a class="btn" href="https://photos.app.goo.gl/t5tfCsFvpqBWa5wW8" target="_blank">Ver galería</a></div>
+  <div class="card"><h3>Arcos</h3><a class="btn" href="https://photos.app.goo.gl/SJ2gYWv7wrnxDN3NA" target="_blank">Ver galería</a></div>
+  <div class="card"><h3>Ramos de Novia</h3><a class="btn" href="https://photos.app.goo.gl/5S49JxRJSS3XCfxD7" target="_blank">Ver galería</a></div>
+
+</div>
+
+<!-- =================== XV AÑOS =================== -->
+<h2>XV Años</h2>
+<div class="grid">
+
+  <div class="card"><h3>Mesa Principal</h3><a class="btn" href="https://photos.app.goo.gl/VhRsJzzisWPYgWrX9" target="_blank">Ver galería</a></div>
+  <div class="card"><h3>Rosa</h3><a class="btn" href="https://photos.app.goo.gl/iw4D327qvLEtSkXp7" target="_blank">Ver galería</a></div>
+  <div class="card"><h3>Lila</h3><a class="btn" href="https://photos.app.goo.gl/jhzPNaUBJVkpmbC68" target="_blank">Ver galería</a></div>
+  <div class="card"><h3>Azul Rey</h3><a class="btn" href="https://photos.app.goo.gl/UmBwjkPPG9wypmC48" target="_blank">Ver galería</a></div>
+  <div class="card"><h3>Blanco</h3><a class="btn" href="https://photos.app.goo.gl/ifxpebUiUgTeo7277" target="_blank">Ver galería</a></div>
+  <div class="card"><h3>Temático</h3><a class="btn" href="https://photos.app.goo.gl/yttviFgPeBHkCB8k7" target="_blank">Ver galería</a></div>
+  <div class="card"><h3>Centros de Mesa</h3><a class="btn" href="https://photos.app.goo.gl/TnXCgDwzjrVAPymJ7" target="_blank">Ver galería</a></div>
+
+</div>
+
+<!-- =================== PORTADAS =================== -->
+<h2>Portadas</h2>
+<div class="grid">
+
+  <div class="card"><h3>Arcos</h3><a class="btn" href="https://photos.app.goo.gl/39vq99CghQe2qnsN7" target="_blank">Ver galería</a></div>
+  <div class="card"><h3>Columnas</h3><a class="btn" href="https://photos.app.goo.gl/sy8nxD8xWEsqFmLr9" target="_blank">Ver galería</a></div>
+  <div class="card"><h3>Altares</h3><a class="btn" href="https://photos.app.goo.gl/MGjXdNXkhiqgbjzc7" target="_blank">Ver galería</a></div>
+  <div class="card"><h3>Pasillos</h3><a class="btn" href="https://photos.app.goo.gl/89cjMvFJu12SdDUe6" target="_blank">Ver galería</a></div>
+  <div class="card"><h3>Entrada Principal</h3><a class="btn" href="https://photos.app.goo.gl/ZtdSx3nT7aiPuBA59" target="_blank">Ver galería</a></div>
+
+</div>
+
+<!-- =================== AUTOS =================== -->
+<h2>Decoración de Autos</h2>
+<div class="grid">
+
+  <div class="card"><h3>Moños</h3><a class="btn" href="https://photos.app.goo.gl/UeVirUcsnqDKjEk37" target="_blank">Ver galería</a></div>
+  <div class="card"><h3>Frontales</h3><a class="btn" href="https://photos.app.goo.gl/C7isdDmoDUtFrunHA" target="_blank">Ver galería</a></div>
+  <div class="card"><h3>Laterales</h3><a class="btn" href="https://photos.app.goo.gl/fmVRpTb8iVH7R2D2A" target="_blank">Ver galería</a></div>
+  <div class="card"><h3>Minimalistas</h3><a class="btn" href="https://photos.app.goo.gl/ZoqWUjgwDUsXgv3Q6" target="_blank">Ver galería</a></div>
+  <div class="card"><h3>Premium</h3><a class="btn" href="https://photos.app.goo.gl/C1heZbVUcJ8SZ3sr6" target="_blank">Ver galería</a></div>
+
+</div>
+
+<!-- =================== FUNERAL =================== -->
+<h2>Funeral</h2>
+<div class="grid">
+
+  <div class="card"><h3>Coronas</h3><a class="btn" href="https://photos.app.goo.gl/Q86VQ4pHUhcA5F4X8" target="_blank">Ver galería</a></div>
+  <div class="card"><h3>Arreglos Laterales</h3><a class="btn" href="https://photos.app.goo.gl/GNG9FeWx3oyYtk9r7" target="_blank">Ver galería</a></div>
+  <div class="card"><h3>Arreglos Altos</h3><a class="btn" href="https://photos.app.goo.gl/bew2bWQmvwtZifWKA" target="_blank">Ver galería</a></div>
+
+</div>
+
+<!-- =================== EVENTOS =================== -->
+<h2>Eventos</h2>
+<div class="grid">
+
+  <div class="card"><h3>Centros de Mesa</h3><a class="btn" href="https://photos.app.goo.gl/TLPve8fLZr8G8vcH6" target="_blank">Ver galería</a></div>
+  <div class="card"><h3>Mesa Principal</h3><a class="btn" href="https://photos.app.goo.gl/iimo68gG16kUHR1h7" target="_blank">Ver galería</a></div>
+  <div class="card"><h3>Temáticos</h3><a class="btn" href="https://photos.app.goo.gl/CTTi4QMFpKJgTgs3A" target="_blank">Ver galería</a></div>
+
+</div>
+
+<!-- =================== ARREGLOS =================== -->
+<h2>Arreglos</h2>
+<div class="grid">
+
+  <div class="card"><h3>Económicos</h3><a class="btn" href="https://photos.app.goo.gl/JSx5tMQRhJyDPTwC7" target="_blank">Ver galería</a></div>
+  <div class="card"><h3>Medianos</h3><a class="btn" href="https://photos.app.goo.gl/PY6HzDDNL6ufsuqFA" target="_blank">Ver galería</a></div>
+  <div class="card"><h3>Premium</h3><a class="btn" href="https://photos.app.goo.gl/G5rTY8AkU7UB4bpz7" target="_blank">Ver galería</a></div>
+
+</div>
+
+</body>
+</html>
