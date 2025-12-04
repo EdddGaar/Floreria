@@ -140,12 +140,18 @@
       box-shadow: 0 10px 25px rgba(0,0,0,0.28);
     }
 
-    /* 🔧 SOLUCIÓN PARA CELULARES: desactivar hover */
+    /* ----------------------------
+       CORRECCIÓN DEFINITIVA PARA CELULAR
+       Quitar todas las transiciones, sombras y transforms
+       ---------------------------- */
     @media (hover: none) {
+      .social-links a,
       .social-links a:hover,
+      button,
       button:hover {
         transform: none !important;
         box-shadow: none !important;
+        transition: none !important;
       }
     }
 
@@ -172,16 +178,25 @@
 
   <div class="social-links">
 
-    <a class="wa" href="https://wa.me/527228966441?text=Hola,%20quiero%20más%20información%20sobre%20sus%20arreglos%20🌸" target="_blank">
-      💬 WhatsApp
+    <a class="wa"
+       href="https://wa.me/527228966441?text=Hola,%20quiero%20más%20información%20sobre%20sus%20arreglos%20🌸"
+       target="_blank"
+       rel="noopener noreferrer">
+       💬 WhatsApp
     </a>
 
-    <a class="fb" href="https://www.facebook.com/share/17CNg5ki17/" target="_blank">
-      🌺 Facebook
+    <a class="fb"
+       href="https://www.facebook.com/share/17CNg5ki17/"
+       target="_blank"
+       rel="noopener noreferrer">
+       🌺 Facebook
     </a>
 
-    <a class="tk" href="https://www.tiktok.com/@juanmanuelsanch716?_r=1&_t=ZS-91v3rAaF8mC" target="_blank">
-      🎵 TikTok
+    <a class="tk"
+       href="https://www.tiktok.com/@juanmanuelsanch716?_r=1&_t=ZS-91v3rAaF8mC"
+       target="_blank"
+       rel="noopener noreferrer">
+       🎵 TikTok
     </a>
 
   </div>
@@ -201,7 +216,7 @@
 
     <button type="submit">Enviar mensaje</button>
 
-    <!-- OPCIONES FORM SUBMIT -->
+    <!-- OPCIONES DE FORM SUBMIT -->
     <input type="hidden" name="_captcha" value="false">
     <input type="hidden" name="_template" value="box">
   </form>
